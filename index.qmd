@@ -1,0 +1,9 @@
+---
+title: "airbeitskreis"
+---
+
+::: {.tagline}
+A working group on AI in teaching and research.
+:::
+
+Placeholder landing page. Replaced in Task 4.

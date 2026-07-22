@@ -1,0 +1,34 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "airbeitskreis"
+  description: "How a group of academics actually uses AI in teaching and research."
+  site-url: "https://caspardp.github.io/airbeitskreis"
+  repo-url: "https://github.com/CasparDP/airbeitskreis"
+  navbar:
+    left:
+      - href: index.qmd
+        text: "Home"
+      - href: projects/index.qmd
+        text: "Projects"
+      - href: contribute.qmd
+        text: "Contribute"
+      - href: about.qmd
+        text: "About"
+    right:
+      - icon: github
+        href: "https://github.com/CasparDP/airbeitskreis"
+        aria-label: "Source on GitHub"
+  page-footer:
+    left: "Code MIT, content CC BY 4.0."
+    right: "Built with [Quarto](https://quarto.org)."
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme/light.scss, theme/shared.scss]
+      dark: [cosmo, theme/dark.scss, theme/shared.scss]
+    toc: true
+    anchor-sections: true

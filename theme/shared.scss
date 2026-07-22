@@ -1,0 +1,99 @@
+/*-- scss:rules --*/
+
+html { scroll-behavior: smooth; }
+
+// Typography. The monospace-as-accent idiom carried over from the personal site.
+h1, h2, h3, h4, h5, h6 { letter-spacing: 0.02em; }
+
+h1 {
+  border-bottom: 2px solid $hairline;
+  padding-bottom: 0.5rem;
+}
+
+.navbar-brand {
+  font-family: $font-family-monospace;
+  letter-spacing: 0.08em;
+}
+
+.nav-link {
+  letter-spacing: 0.02em;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+
+  &:hover { color: $accent; }
+  &.active {
+    color: $accent;
+    border-bottom-color: $accent;
+  }
+}
+
+// Small uppercase mono label used above sections.
+.section-label {
+  font-family: $font-family-monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $ink-muted;
+  margin-bottom: 0.25rem;
+}
+
+// The tagline under the site name. The pun needs a plain-English gloss everywhere.
+.tagline {
+  font-family: $font-family-monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: $ink-muted;
+}
+
+// Listing cards. No scale-on-hover, no glow: shadow and border only.
+.card {
+  border: 1px solid $card-border-color;
+  box-shadow: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    border-color: $accent;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+  }
+}
+
+.listing-categories .listing-category {
+  font-family: $font-family-monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $accent;
+  background: transparent;
+  border: 1px solid $hairline;
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  opacity: 1;
+}
+
+// Custom listing fields render as table cells named after the field, NOT as
+// .listing-<field>. Verified: the tools field emits <td class="tools">.
+.quarto-listing td.tools {
+  font-family: $font-family-monospace;
+  font-size: 0.72rem;
+  color: $ink-muted;
+}
+
+.listing-date, .listing-author {
+  font-family: $font-family-monospace;
+  font-size: 0.75rem;
+  color: $ink-muted;
+}
+
+pre {
+  background: $surface-raised;
+  border: 1px solid $hairline;
+  border-radius: 6px;
+}
+
+table, .table { font-family: $font-family-base; font-size: 0.9rem; }
+
+table thead, .table thead {
+  border-bottom: 2px solid $hairline;
+}
+
+img { max-width: 100%; height: auto; }

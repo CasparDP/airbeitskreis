@@ -1,0 +1,27 @@
+/*-- scss:defaults --*/
+
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;700&display=swap");
+
+// Dark palette, inherited from the personal site. Accent is 9.3:1 on the base, passes AAA.
+$accent:          #E8A955;
+$accent-hover:    #F0C078;
+$surface:         #0C1019;
+$surface-raised:  #171C28;
+$ink:             #C8C8C0;
+$ink-muted:       #8E8E86;
+$hairline:        rgba(232, 169, 85, 0.20);
+
+$body-bg:              $surface;
+$body-color:           $ink;
+$font-family-base:      "Geist", system-ui, sans-serif;
+$headings-font-family:  "Geist", system-ui, sans-serif;
+$font-family-monospace: "Geist Mono", ui-monospace, monospace;
+$headings-font-weight: 600;
+$headings-color:       $accent;
+$link-color:           $accent;
+$link-hover-color:     $accent-hover;
+$link-decoration:      none;
+$link-hover-decoration: underline;
+$border-radius:        8px;
+$card-bg:              $surface-raised;
+$card-border-color:    $hairline;
