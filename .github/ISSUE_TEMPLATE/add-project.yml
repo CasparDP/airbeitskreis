@@ -1,0 +1,77 @@
+name: Add a project
+description: Suggest a project for the site without touching git. A maintainer will open the pull request.
+title: "Add project: "
+labels: ["new project"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill this in and a maintainer will turn it into a pull request for you.
+        Prefer to do it yourself? See [Contribute](https://caspardp.github.io/airbeitskreis/contribute.html).
+
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: Specific and concrete beats general.
+      placeholder: "Grading 120 theses with a rubric agent"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: One-sentence description
+      description: This is the only text shown on the card.
+      placeholder: "A rubric-driven agent that drafts first-pass feedback on bachelor theses."
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: Author
+      description: As you want to be credited.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      multiple: true
+      options:
+        - teaching
+        - research
+        - writing
+        - data
+        - admin
+        - tools
+        - fun
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tools
+    attributes:
+      label: Tools used
+      multiple: true
+      options:
+        - claude
+        - claude-code
+        - chatgpt
+        - codex
+        - copilot
+        - ollama
+        - lm-studio
+    validations:
+      required: false
+
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: If it is already published somewhere, paste the URL. Leave blank to write it up on this site instead.
+      placeholder: "https://your-site.example/the-post"
+    validations:
+      required: false
