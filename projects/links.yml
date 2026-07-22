@@ -12,3 +12,11 @@
   categories: [research, tools]
   tools: [claude-code]
   path: "https://github.com/CasparDP/RAIner"
+
+- title: "cite-hustle: chasing down citations"
+  description: "A scraper and database for tracking who cites what, with an LLM pass over abstracts."
+  author: "Caspar David Peter"
+  date: "2026-07-22"
+  categories: [research, data]
+  tools: [claude-code]
+  path: "https://github.com/CasparDP/cite-hustle"
