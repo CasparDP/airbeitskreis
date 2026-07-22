@@ -3,9 +3,10 @@
 /_site/
 /_freeze/
 
-# Local working notes, not part of the public site
-/docs/specs/
-/docs/plans/
+# Local working notes, not part of the public site.
+# The whole docs/ tree is maintainer-only: spec, plan, and handoff.
+# _quarto.yml also excludes it from rendering via the project render allowlist.
+/docs/
 /CLAUDE.md
 
 # Editor / OS
