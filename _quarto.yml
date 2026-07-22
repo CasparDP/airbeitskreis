@@ -1,6 +1,12 @@
 project:
   type: website
   output-dir: _site
+  # Explicit allowlist. Without it Quarto renders every Markdown file it finds,
+  # including maintainer-local notes under docs/, which are gitignored but would
+  # still be published by any local render.
+  render:
+    - "*.qmd"
+    - "projects/*.qmd"
 
 website:
   title: "airbeitskreis"
