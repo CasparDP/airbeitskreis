@@ -13,3 +13,6 @@
 *.swp
 
 **/*.quarto_ipynb
+
+# Local Python env for the validator (CI installs pyyaml directly)
+/.venv/
