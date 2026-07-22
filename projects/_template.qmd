@@ -1,0 +1,38 @@
+---
+# Copy this file, rename it to something like my-project.qmd, and edit.
+# Delete these comments when you are done.
+
+# A specific, concrete title. "Grading 120 theses with a rubric agent"
+# beats "Using AI for grading".
+title: "Your project title"
+
+# One sentence. This is the only text shown on the card, so make it count.
+description: "One sentence describing what you did and why it helped."
+
+# Your name as you want it credited.
+author: "Your Name"
+
+# YYYY-MM-DD.
+date: "2026-01-01"
+
+# Pick from: teaching, research, writing, data, admin, tools, fun
+# Anything else fails CI.
+categories: [teaching]
+
+# Pick from: claude, claude-code, chatgpt, codex, copilot, ollama, lm-studio
+# Displayed on the card. Omit the field entirely if none apply.
+tools: [claude-code]
+---
+
+## What I was trying to do
+
+The problem in a couple of sentences. What was tedious, slow, or impossible before.
+
+## How it works
+
+The actual workflow. Prompts, scripts, and screenshots are all welcome. Be concrete
+enough that a colleague could reproduce it.
+
+## What worked and what did not
+
+Honest assessment. The failures are often more useful to readers than the successes.

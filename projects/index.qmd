@@ -1,0 +1,29 @@
+---
+title: "Projects"
+listing:
+  contents:
+    - "*.qmd"
+    - links.yml
+  type: grid
+  grid-columns: 3
+  # `image` is deliberately absent. Including it renders an empty
+  # listing-item-img-placeholder on every card that has no thumbnail, and no
+  # Phase 1 entry has one. Added in Phase 2 alongside the design work.
+  fields: [title, author, date, description, categories, tools]
+  field-display-names:
+    tools: "Tools"
+  sort: "date desc"
+  categories: true
+  sort-ui: false
+  filter-ui: true
+  page-size: 24
+---
+
+::: {.section-label}
+Contributions welcome
+:::
+
+Every entry below is a real workflow someone in the group actually uses. Some link to a
+full write-up here, others point out to the author's own site or repository.
+
+[Add yours](../contribute.qmd)

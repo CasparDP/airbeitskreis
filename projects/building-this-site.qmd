@@ -1,0 +1,38 @@
+---
+title: "Building this site with a coding agent"
+description: "Spec, plan, and implementation of this website, done conversationally with Claude Code."
+author: "Caspar David Peter"
+date: "2026-07-22"
+categories: [tools, writing]
+tools: [claude-code]
+---
+
+## What I was trying to do
+
+Get a shared home for the group's AI experiments online, without spending a month on it
+and without a stack that only I can maintain. The constraint that mattered most: a
+colleague who has never used git should be able to add their project.
+
+## How it works
+
+The site is [Quarto](https://quarto.org), which renders Markdown into a static website,
+deployed by GitHub Actions to GitHub Pages. Every project on the site is either a Markdown
+file or four lines of YAML, so contributing never requires running anything locally.
+
+The work happened in three passes rather than one. First a design spec, which forced the
+decisions that are expensive to change later: what a contribution *is*, who reviews it,
+where it is hosted. Then an implementation plan broken into tasks small enough to verify
+one at a time. Only then the code.
+
+## What worked and what did not
+
+Writing the spec first was the whole game. The agent pushed back on sequencing the
+contributor tooling before the content schema was frozen, which would have meant building
+it twice.
+
+What did not work was assuming. Two claims about how Quarto listings behave, mixing local
+pages with external links in one grid, and excluding a template file from that grid, both
+turned out to be true, but only after testing them. A third assumption, about which CSS
+class Quarto emits for a custom field, turned out to be wrong and would have shipped as
+silently dead styling. The habit worth copying is asking for the check rather than the
+confident answer.
