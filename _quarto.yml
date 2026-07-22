@@ -9,7 +9,7 @@ project:
     - "projects/*.qmd"
 
 website:
-  title: "airbeitskreis"
+  title: "A(I)rbeitskreis"
   description: "How a group of academics actually uses AI in teaching and research."
   site-url: "https://caspardp.github.io/airbeitskreis"
   repo-url: "https://github.com/CasparDP/airbeitskreis"

@@ -1,5 +1,5 @@
 ---
-title: "airbeitskreis"
+title: "A(I)rbeitskreis"
 toc: false
 ---
 
@@ -24,6 +24,6 @@ Start here
 The name
 :::
 
-*Arbeitskreis* is German for a working group. Put AI in front of it and you get
-*airbeitskreis*, which is either a good pun or a warning about what happens when academics
-name things.
+*Arbeitskreis* is German for a working group. Slip an I into it and you get
+*A(I)rbeitskreis*, which is either a good pun or a warning about what happens when
+academics name things.
