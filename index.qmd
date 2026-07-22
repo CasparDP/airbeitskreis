@@ -1,0 +1,29 @@
+---
+title: "A(I)rbeitskreis"
+toc: false
+---
+
+::: {.tagline}
+A working group on AI in teaching and research.
+:::
+
+We are a group of academics who meet to talk about how AI is changing the way we teach and
+do research. Not the discourse about it, the actual practice: what we tried, what broke,
+what we now use every week.
+
+This site collects those workflows. Every entry is something a member of the group
+genuinely uses, written up concretely enough that a colleague could copy it.
+
+::: {.section-label}
+Start here
+:::
+
+[Browse the projects](projects/index.qmd) or [add one of your own](contribute.qmd).
+
+::: {.section-label}
+The name
+:::
+
+*Arbeitskreis* is German for a working group. Slip an I into it and you get
+*A(I)rbeitskreis*, which is either a good pun or a warning about what happens when
+academics name things.

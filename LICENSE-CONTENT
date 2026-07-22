@@ -1,0 +1,20 @@
+Content license
+===============
+
+The MIT License in LICENSE covers the code and site machinery: configuration,
+themes, scripts, workflows, and templates.
+
+The content of this site, meaning the project pages under projects/, the prose
+in index.qmd, about.qmd, and contribute.qmd, and any images accompanying them,
+is licensed under the Creative Commons Attribution 4.0 International License
+(CC BY 4.0).
+
+    https://creativecommons.org/licenses/by/4.0/
+
+You are free to share and adapt this content for any purpose, including
+commercially, provided you give appropriate credit to the named author of the
+page you are reusing.
+
+Contributors retain copyright in the pages they author. By opening a pull
+request that adds content to this repository, a contributor grants that content
+to the public under CC BY 4.0.

@@ -1,0 +1,18 @@
+# Quarto
+/.quarto/
+/_site/
+/_freeze/
+
+# Local working notes, not part of the public site
+/docs/specs/
+/docs/plans/
+/CLAUDE.md
+
+# Editor / OS
+.DS_Store
+*.swp
+
+**/*.quarto_ipynb
+
+# Local Python env for the validator (CI installs pyyaml directly)
+/.venv/

@@ -1,0 +1,27 @@
+/*-- scss:defaults --*/
+
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;700&display=swap");
+
+// Light palette. Accent is the deepened gold: 5.9:1 against white, passes WCAG AA.
+$accent:          #8A5A14;
+$accent-hover:    #6E4710;
+$surface:         #FFFFFF;
+$surface-raised:  #FAF8F4;
+$ink:             #23201B;
+$ink-muted:       #5C564D;
+$hairline:        rgba(35, 32, 27, 0.12);
+
+$body-bg:              $surface;
+$body-color:           $ink;
+$font-family-base:      "Geist", system-ui, sans-serif;
+$headings-font-family:  "Geist", system-ui, sans-serif;
+$font-family-monospace: "Geist Mono", ui-monospace, monospace;
+$headings-font-weight: 600;
+$headings-color:       $ink;
+$link-color:           $accent;
+$link-hover-color:     $accent-hover;
+$link-decoration:      none;
+$link-hover-decoration: underline;
+$border-radius:        8px;
+$card-bg:              $surface-raised;
+$card-border-color:    $hairline;

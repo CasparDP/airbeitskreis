@@ -1,0 +1,98 @@
+---
+title: "Contribute"
+---
+
+There are three ways in, from least to most technical. All of them end with a pull request
+that someone reviews before it goes live.
+
+::: {.section-label}
+Option 1: no git at all
+:::
+
+[Open an issue using the "Add a project" form](https://github.com/CasparDP/airbeitskreis/issues/new?template=add-project.yml).
+Fill in four fields. A maintainer turns it into a pull request. This is the right choice if
+the words "pull request" already sound like work.
+
+::: {.section-label}
+Option 2: the GitHub web interface
+:::
+
+Everything below happens in a browser. Nothing to install, no Quarto, no command line.
+
+**To link to something you already published elsewhere**, a blog post, a repository, a
+paper, edit
+[`projects/links.yml`](https://github.com/CasparDP/airbeitskreis/edit/main/projects/links.yml)
+and append an entry:
+
+```yaml
+- title: "Grading 120 theses with a rubric agent"
+  description: "One sentence. This is the only text shown on the card."
+  author: "Your Name"
+  date: "2026-07-22"
+  categories: [teaching]
+  tools: [claude-code]
+  path: "https://your-site.example/the-post"
+```
+
+**To write a full page on this site instead**, copy
+[`projects/_template.qmd`](https://github.com/CasparDP/airbeitskreis/blob/main/projects/_template.qmd),
+rename it to something like `my-project.qmd`, and edit it. The template has the frontmatter
+filled in and section headings to write against.
+
+Either way, GitHub will offer to open a pull request when you save. Take it.
+
+::: {.section-label}
+Option 3: locally
+:::
+
+```bash
+git clone https://github.com/CasparDP/airbeitskreis.git
+cd airbeitskreis
+quarto preview                      # live reload; Quarto prints the URL
+
+# The schema check CI runs. Needs pyyaml, so use a throwaway virtual environment:
+python3 -m venv .venv && .venv/bin/pip install pyyaml
+.venv/bin/python scripts/validate_projects.py
+```
+
+::: {.section-label}
+The fields
+:::
+
+Both entry types use the same fields.
+
+| Field | Required | Notes |
+| --- | --- | --- |
+| `title` | yes | Specific and concrete. "Grading 120 theses with a rubric agent" beats "Using AI for grading". |
+| `description` | yes | One sentence. The only text on the card. |
+| `author` | yes | As you want to be credited. |
+| `date` | yes | `YYYY-MM-DD`. |
+| `categories` | yes | From the fixed list below. |
+| `tools` | no | From the fixed list below. Shown on the card. |
+| `path` | link entries only | Absolute `https://` URL. Leave it out entirely for full pages. |
+
+**Categories** (pick one or more): `teaching`, `research`, `writing`, `data`, `admin`,
+`tools`, `fun`.
+
+**Tools** (pick any that apply): `claude`, `claude-code`, `chatgpt`, `codex`, `copilot`,
+`ollama`, `lm-studio`.
+
+Both lists are deliberately closed, so the filters stay useful instead of fragmenting into
+forty near-duplicates. Anything outside them fails CI with a message naming the problem. To
+add a value to either list, open a PR changing `scripts/validate_projects.py` and this page.
+
+::: {.section-label}
+One rule about code
+:::
+
+Project pages are prose by default. If your page needs to *execute* R or Python, set
+`freeze: auto` in its frontmatter and commit the generated `_freeze/` directory. CI renders
+the site without installing anyone's packages, so an unfrozen `library(fixest)` would break
+deploys for everyone.
+
+::: {.section-label}
+What happens next
+:::
+
+CI renders your PR and validates your entry. A maintainer reviews it. On merge, the site
+rebuilds and your project is live within a couple of minutes.

@@ -1,0 +1,35 @@
+---
+title: "About"
+---
+
+## What this is
+
+An informal group of academics, at every career stage, comparing notes on how AI actually
+lands in teaching and research. We started by meeting and talking. This site is the part
+of those conversations that turned out to be worth writing down.
+
+## What belongs here
+
+Workflows you actually use. A prompt that reliably does something tedious, a script that
+wraps a model, a grading process, a literature pipeline, a failure worth warning others
+about. Concrete beats comprehensive.
+
+What does not belong: speculation about where AI is going, position pieces, or tool
+announcements from people who have not used the tool.
+
+## Where this is going
+
+If enough people contribute, and enough others find it useful, a small workshop. That is
+the ambition, and it depends entirely on whether the content is good.
+
+## Contributing
+
+Anyone in the group can add a project, and the site is open source so anyone can read the
+source, fork it, or reuse the scaffolding. Contributions are reviewed before they go live,
+since everything here appears under a named author. See [Contribute](contribute.qmd).
+
+## License
+
+The code and site machinery are MIT licensed. Project pages and prose are
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse them freely with credit.
+Contributors keep copyright on what they write.
