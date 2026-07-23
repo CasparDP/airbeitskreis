@@ -1,6 +1,6 @@
 /*-- scss:defaults --*/
 
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;700&display=swap");
+// Fonts are self-hosted via @font-face in shared.scss (no third-party request).
 
 // Dark palette, inherited from the personal site. Accent is 9.3:1 on the base, passes AAA.
 $accent:          #E8A955;
@@ -25,3 +25,7 @@ $link-hover-decoration: underline;
 $border-radius:        8px;
 $card-bg:              $surface-raised;
 $card-border-color:    $hairline;
+// Deeper than the light theme: a 10% shadow vanishes on the navy surface, so the
+// hover lift needs a stronger black to register. The border shift to $accent is
+// the primary hover signal; this is the secondary depth cue.
+$card-shadow:          0 2px 14px rgba(0, 0, 0, 0.45);

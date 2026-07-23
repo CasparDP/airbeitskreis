@@ -8,6 +8,8 @@
 # _quarto.yml also excludes it from rendering via the project render allowlist.
 /docs/
 /CLAUDE.md
+# Cross-model review reports (pi-review skill output): maintainer artifacts.
+/quality_reports/
 
 # Editor / OS
 .DS_Store

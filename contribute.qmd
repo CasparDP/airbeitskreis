@@ -69,6 +69,7 @@ Both entry types use the same fields.
 | `date` | yes | `YYYY-MM-DD`. |
 | `categories` | yes | From the fixed list below. |
 | `tools` | no | From the fixed list below. Shown on the card. |
+| `image` | no | Path to a thumbnail, e.g. `/images/my-thumb.png`. Landscape works best (the card crops it to a wide strip). Leave it out and the card shows the A(I) monogram tile. |
 | `path` | link entries only | Absolute `https://` URL. Leave it out entirely for full pages. |
 
 **Categories** (pick one or more): `teaching`, `research`, `writing`, `data`, `admin`,

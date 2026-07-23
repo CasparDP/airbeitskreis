@@ -1,10 +1,14 @@
 ---
-title: "A(I)rbeitskreis"
+pagetitle: "A(I)rbeitskreis"
 toc: false
 ---
 
-::: {.tagline}
-A working group on AI in teaching and research.
+::: {.hero}
+[A(I)rbeitskreis]{.hero-name}
+
+[How a group of academics actually uses AI in teaching and research.]{.hero-tagline}
+
+[Browse the projects](projects/index.qmd){.hero-cta}[Add your own](contribute.qmd){.hero-secondary}
 :::
 
 We are a group of academics who meet to talk about how AI is changing the way we teach and
@@ -13,12 +17,6 @@ what we now use every week.
 
 This site collects those workflows. Every entry is something a member of the group
 genuinely uses, written up concretely enough that a colleague could copy it.
-
-::: {.section-label}
-Start here
-:::
-
-[Browse the projects](projects/index.qmd) or [add one of your own](contribute.qmd).
 
 ::: {.section-label}
 The name

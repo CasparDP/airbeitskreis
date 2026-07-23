@@ -1,6 +1,6 @@
 # External projects. Each entry becomes a card that links straight out.
 # Required: title, description, author, date, categories, path
-# Optional: tools
+# Optional: tools, image (e.g. /images/my-thumb.png; omit for the A(I) monogram tile)
 #
 # categories must come from: teaching, research, writing, data, admin, tools, fun
 # tools must come from: claude, claude-code, chatgpt, codex, copilot, ollama, lm-studio
