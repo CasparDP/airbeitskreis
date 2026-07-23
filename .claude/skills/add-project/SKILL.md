@@ -73,8 +73,12 @@ contributor's own courses and students; `admin` means university administration;
 
 ```bash
 # The validator needs pyyaml. Homebrew Python is externally managed and refuses a
-# bare pip install, so the repository uses a gitignored venv. Create it if missing.
-[ -x .venv/bin/python ] || { python3 -m venv .venv && .venv/bin/pip install --quiet pyyaml; }
+# bare pip install, so the repository uses a gitignored venv. Test for the import
+# rather than the directory: a half-built venv from an earlier attempt has the
+# interpreter but not the package.
+.venv/bin/python -c "import yaml" 2>/dev/null || {
+  python3 -m venv .venv && .venv/bin/pip install --quiet pyyaml
+}
 .venv/bin/python scripts/validate_projects.py   # must print "All project entries valid."
 quarto render                                   # must complete without error
 ```
@@ -95,8 +99,15 @@ gh pr create --fill
 ```
 
 Never commit to `main` and never push to it; it is protected and the push will be
-rejected. If the push is refused for lack of write access, fork and push there instead:
-`gh repo fork --remote` then `git push -u fork add-<slug>`.
+rejected. If the push is refused for lack of write access, fork and push there instead.
+Name the remote explicitly, because `gh` otherwise calls it `origin` and renames the
+existing one:
+
+```bash
+gh repo fork --remote --remote-name fork
+git push -u fork add-<slug>
+gh pr create --fill --repo CasparDP/airbeitskreis
+```
 
 ## Rules
 
@@ -112,8 +123,15 @@ Gemini is not `chatgpt`. Adding to either vocabulary is a separate PR touching
 part of this one.
 
 **Subpages are prose.** If the page must execute R or Python, it needs `freeze: auto` in
-its frontmatter and a committed `_freeze/` directory. CI renders without installing
-anyone's packages, so an unfrozen `library(fixest)` breaks deploys for everyone.
+its frontmatter and a committed freeze. CI renders without installing anyone's packages, so
+an unfrozen `library(fixest)` breaks deploys for everyone. `_freeze/` is gitignored, since
+it is otherwise just local render output, so that one page's freeze has to be forced in:
+
+```bash
+git add -f _freeze/projects/<slug>
+```
+
+A plain `git add` skips it silently and CI then fails on the page it was meant to protect.
 
 ## Red flags
 

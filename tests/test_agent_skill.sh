@@ -37,7 +37,8 @@ done
 #    only exist after a build or a venv install are deliberately excluded.
 missing=""
 for f in "$SKILL" "$AGENTS"; do
-  for p in $(grep -oE '`[A-Za-z_.][A-Za-z0-9_./-]*`' "$f" | tr -d '`' | sort -u); do
+  while IFS= read -r p; do
+    [ -n "$p" ] || continue
     case "$p" in
       .venv/*|_freeze/|_site/|_freeze/*|_site/*) continue ;;
       projects/*|scripts/*|tests/*|theme/*|.github/*|.claude/*|images/*|fonts/*) ;;
@@ -48,7 +49,7 @@ for f in "$SKILL" "$AGENTS"; do
       projects/'<slug>'.qmd|*'<'*) continue ;;   # placeholders, not real paths
     esac
     [ -e "$p" ] || missing="$missing $p"
-  done
+  done < <(grep -oE '`[A-Za-z_.][A-Za-z0-9_./-]*`' "$f" | tr -d '`' | sort -u)
 done
 if [ -z "$missing" ]; then
   ok "every path named in the skill and AGENTS.md exists"
@@ -58,35 +59,43 @@ fi
 
 # 4. The skill must send the agent to the validator for the vocabularies rather
 #    than carrying its own copy. This is the whole reason it is not a fourth
-#    enforcer of the schema.
-if grep -q 'scripts/validate_projects.py' "$SKILL" && grep -q 'CATEGORIES' "$SKILL"; then
+#    enforcer of the schema. Assert on the instruction, one line that reads the
+#    names out of the validator, not on the two strings appearing anywhere.
+if grep -qE 'grep.*CATEGORIES.*scripts/validate_projects\.py' "$SKILL"; then
   ok "skill reads the vocabularies from the validator"
 else
   bad "skill reads the vocabularies from the validator" \
-      "SKILL.md no longer points at CATEGORIES in scripts/validate_projects.py"
+      "no command in SKILL.md reads CATEGORIES out of scripts/validate_projects.py"
 fi
 
-# 5. Neither file may restate a whole vocabulary. Naming one or two values while
-#    explaining a judgement call is fine; carrying the full list is the copy that
-#    silently drifts the next time the list changes.
-check_no_full_list() { # file, label, values...
+# 5. Neither file may restate a vocabulary. Naming a couple of values to explain a
+#    judgement call is fine and useful; a run of them on one line is a pasted list,
+#    and a pasted list is the copy that silently drifts when the real one changes.
+#    Counting per line rather than per file is what separates the two: prose spreads
+#    its examples out, a list does not.
+MAX_PER_LINE=3
+check_no_pasted_list() { # file, label, values...
   local file="$1" label="$2"; shift 2
-  local v hits=0 found=""
-  for v in "$@"; do
-    if grep -qw -- "$v" "$file"; then hits=$((hits+1)); found="$found $v"; fi
-  done
-  if [ "$hits" -lt "$#" ]; then
+  local values="$*" worst=0 worstline=""
+  while IFS= read -r line; do
+    local v hits=0
+    for v in $values; do
+      case " $line " in *[^a-z-]"$v"[^a-z-]*) hits=$((hits+1)) ;; esac
+    done
+    if [ "$hits" -gt "$worst" ]; then worst=$hits; worstline=$line; fi
+  done < "$file"
+  if [ "$worst" -le "$MAX_PER_LINE" ]; then
     ok "$file does not restate the $label list"
   else
     bad "$file does not restate the $label list" \
-        "contains every value ($found); read them from the validator instead"
+        "$worst of them on one line, which is a pasted list: ${worstline# }"
   fi
 }
 cats="teaching research writing data admin tools fun"
 tools="claude claude-code chatgpt codex copilot ollama lm-studio"
 for f in "$SKILL" "$AGENTS"; do
-  check_no_full_list "$f" categories $cats
-  check_no_full_list "$f" tools $tools
+  check_no_pasted_list "$f" categories $cats
+  check_no_pasted_list "$f" tools $tools
 done
 
 # 6. The vocabularies this test hardcodes must match the validator, or check 5
