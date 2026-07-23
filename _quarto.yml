@@ -7,12 +7,23 @@ project:
   render:
     - "*.qmd"
     - "projects/*.qmd"
+  # The favicon and social-preview card are copied verbatim to _site/images/.
+  # (The self-hosted fonts under fonts/ need no entry here: Quarto discovers them
+  # from the theme CSS url() and bundles them next to the compiled stylesheet.)
+  resources:
+    - "images/"
 
 website:
   title: "A(I)rbeitskreis"
   description: "How a group of academics actually uses AI in teaching and research."
   site-url: "https://caspardp.github.io/airbeitskreis"
   repo-url: "https://github.com/CasparDP/airbeitskreis"
+  favicon: images/favicon.png
+  # One site-wide social-preview card. Quarto emits the og:image and twitter:image
+  # tags from this; open-graph/twitter cards are enabled below.
+  image: images/og-card.png
+  open-graph: true
+  twitter-card: true
   navbar:
     left:
       - href: index.qmd

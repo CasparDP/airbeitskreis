@@ -1,6 +1,6 @@
 /*-- scss:defaults --*/
 
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;700&display=swap");
+// Fonts are self-hosted via @font-face in shared.scss (no third-party request).
 
 // Light palette. Accent is the deepened gold: 5.9:1 against white, passes WCAG AA.
 $accent:          #8A5A14;
@@ -25,3 +25,6 @@ $link-hover-decoration: underline;
 $border-radius:        8px;
 $card-bg:              $surface-raised;
 $card-border-color:    $hairline;
+// Hover shadow lives in the palette so it can read on each surface. On white a
+// soft black shadow is enough; the dark theme deepens it (see dark.scss).
+$card-shadow:          0 2px 12px rgba(0, 0, 0, 0.10);

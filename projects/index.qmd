@@ -6,10 +6,11 @@ listing:
     - links.yml
   type: grid
   grid-columns: 3
-  # `image` is deliberately absent. Including it renders an empty
-  # listing-item-img-placeholder on every card that has no thumbnail, and no
-  # Phase 1 entry has one. Added in Phase 2 alongside the design work.
-  fields: [title, author, date, description, categories, tools]
+  # `image` is optional per entry. Cards without a real thumbnail get a designed
+  # A(I) monogram tile (theme/shared.scss keys it on the absence of
+  # .thumbnail-image so it applies to both entry types), so a missing image reads
+  # as intentional rather than as an empty grey box.
+  fields: [title, author, date, description, categories, tools, image]
   field-display-names:
     tools: "Tools"
   sort: "date desc"

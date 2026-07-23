@@ -22,6 +22,10 @@ categories: [teaching]
 # Pick from: claude, claude-code, chatgpt, codex, copilot, ollama, lm-studio
 # Displayed on the card. Omit the field entirely if none apply.
 tools: [claude-code]
+
+# Optional thumbnail, e.g. /images/my-thumb.png (landscape works best).
+# Omit it and the card shows the A(I) monogram tile.
+# image: /images/my-thumb.png
 ---
 
 ## What I was trying to do
