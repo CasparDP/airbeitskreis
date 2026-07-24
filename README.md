@@ -10,12 +10,16 @@ those workflows.
 
 ## Adding a project
 
-Three ways, from least to most technical:
+Four ways, from least to most technical:
 
 1. **[Open an issue](https://github.com/CasparDP/airbeitskreis/issues/new?template=add-project.yml)** and a maintainer opens the PR for you.
 2. **Edit in the GitHub web UI.** Append to `projects/links.yml` to link something you
    published elsewhere, or copy `projects/_template.qmd` to write a full page here.
 3. **Clone it.** `quarto preview` for live reload.
+4. **Ask an agent.** The contribution procedure ships with the repository as
+   `.claude/skills/add-project/SKILL.md`, which Claude Code loads on its own and other
+   tools reach through `AGENTS.md`. Describe your project in plain language and it writes
+   the entry, runs the checks CI runs, and opens the PR.
 
 Full instructions, including the field reference, are on the
 [Contribute](https://caspardp.github.io/airbeitskreis/contribute.html) page.

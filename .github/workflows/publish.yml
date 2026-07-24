@@ -36,6 +36,9 @@ jobs:
       - name: Run validator tests
         run: ./tests/test_validate_projects.sh
 
+      - name: Check the agent contribution path
+        run: ./tests/test_agent_skill.sh
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:

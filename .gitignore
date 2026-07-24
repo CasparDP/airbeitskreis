@@ -19,3 +19,10 @@
 
 # Local Python env for the validator (CI installs pyyaml directly)
 /.venv/
+
+# Agent tooling. The add-project skill ships with the repo; everything else under
+# .claude/ is machine-local (worktrees, personal permission settings). Ignoring
+# the directory's contents and re-including one child is the standard idiom, and
+# it works because .claude/ itself is not excluded.
+/.claude/*
+!/.claude/skills/

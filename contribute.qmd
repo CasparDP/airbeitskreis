@@ -2,7 +2,7 @@
 title: "Contribute"
 ---
 
-There are three ways in, from least to most technical. All of them end with a pull request
+There are four ways in, from least to most technical. All of them end with a pull request
 that someone reviews before it goes live.
 
 ::: {.section-label}
@@ -54,6 +54,29 @@ quarto preview                      # live reload; Quarto prints the URL
 python3 -m venv .venv && .venv/bin/pip install pyyaml
 .venv/bin/python scripts/validate_projects.py
 ```
+
+::: {.section-label}
+Option 4: let an agent do it
+:::
+
+The repository carries the contribution procedure as an agent skill, so if you already work
+in an AI coding tool you can hand it the job. Clone the repository, open it in your agent,
+and describe your project in plain language.
+
+```bash
+git clone https://github.com/CasparDP/airbeitskreis.git
+cd airbeitskreis
+claude        # then: "add my project to this site: ..."
+```
+
+Claude Code picks up `.claude/skills/add-project/SKILL.md` on its own. Other tools read
+`AGENTS.md` in the repository root, which points at the same file. The agent asks for
+whatever it still needs, writes the entry, runs the same checks CI runs, and opens the pull
+request.
+
+It is the slowest way to add a one-line link and the only one that is also a demonstration
+of the thing this site is about. Read the diff before you approve it: the agent is good at
+the format and cannot know what you actually did.
 
 ::: {.section-label}
 The fields
