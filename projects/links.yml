@@ -20,3 +20,11 @@
   categories: [research, data]
   tools: [claude-code]
   path: "https://github.com/CasparDP/cite-hustle"
+
+- title: "Lectern: a writing workbench for academic papers"
+  description: "A desktop and localhost app where one folder of PDFs, manuscripts and a shared .bib is edited by Claude Code in an embedded terminal."
+  author: "Victor Wagner"
+  date: "2026-09-09"
+  categories: [writing, tools]
+  tools: [claude-code]
+  path: "https://github.com/victor-234/lectern"
